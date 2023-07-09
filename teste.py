@@ -58,7 +58,7 @@ def maiuscula(frase):
         if signal == 1:
             frase = frase.capitalize()
             signal =0
-        elif '.' in frase or '?' in frase:
+        elif '.' in frase or '?' in frase or '!' in frase:
             signal = 1
         frases.append(frase)
     frases = ' '.join(frases)
@@ -72,7 +72,6 @@ b. Output: true
 
 def anagrama(palavra):
     palavra_inicial = list(palavra)
-    print(palavra_inicial)
     palavra_final = palavra_inicial[::-1]
     if palavra_inicial == palavra_final:
         palavra_inicial.sort()
@@ -85,3 +84,44 @@ def anagrama(palavra):
         return False
 
 
+def main():
+    while True:
+        option = input('Escolha um exercício (1 a 5) fora isso a aplicação fecha: ')
+        if option == '1':
+            print('Reverta a ordem das palavras nas frases, mantendo a ordem das palavras')
+            caso_teste = ('Hello, World! OpenAI is amazing.')
+            print (caso_teste)
+            print(reverter_ordem(caso_teste))
+            user = input('Digite a frase: ')
+            print(reverter_ordem(user))
+        elif option == '2':
+            print('Remova todos os caracteres duplicados da string abaixo')
+            caso_teste = ('Hello, World!')
+            print (caso_teste)
+            print(remover_duplicados(caso_teste))
+            user = input('Digite a frase: ')
+            print(remover_duplicados(user))
+        elif option == '3':
+            print('Encontre a substring palindroma mais longa na string abaixo')
+            caso_teste = ('babad')
+            print (caso_teste)
+            print(palindromo(caso_teste))
+            user = input('Digite a frase: ')
+            print(palindromo(user))
+        elif option == '4':
+            print('Coloque em maiúscula a primeira leitra de cada frase na string')
+            caso_teste = ("hello. how are you? i'm fine, thank you")
+            print (caso_teste)
+            print(maiuscula(caso_teste))
+            user = input('Digite a frase: ')
+            print(maiuscula(user))
+        elif option == '5':
+            print('Verifique se a string é um anagrama de um palindromo')
+            caso_teste = ('racecar')
+            print (caso_teste)
+            print(anagrama(caso_teste))
+            user = input('Digite a palavra: ')
+            print(anagrama(user.lower()))
+        else:
+            break
+main()
