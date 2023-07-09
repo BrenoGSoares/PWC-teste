@@ -16,6 +16,18 @@ a. Input: "Hello, World!"
 b. Output: "Helo, Wrd!"
 '''
 
+def remover_duplicados(frase):
+    frase = frase.lower().split()
+    frase_limpa = []
+    for palavra in frase:
+        palavra+=' '
+        for letra in palavra:
+            if letra not in frase_limpa or letra==' ':
+                frase_limpa.append(letra)
+    frase_limpa = ''.join(frase_limpa)
+    return(frase_limpa)
+        
+
 '''
 3 - Encontre a substring palindroma mais longa na string abaixo:
 a. Input: "babad"
@@ -34,4 +46,4 @@ a. Input: "racecar"
 b. Output: true
 '''
 
-print(reverter_ordem("Hello, World! OpenAI is amazing."))
+print(remover_duplicados("Hello, World!"))
