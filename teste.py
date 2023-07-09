@@ -1,3 +1,5 @@
+import re
+
 '''
 1 - Reverta a ordem das palavras nas frases, mantendo a ordem das palavras.
 a. Input: "Hello, World! OpenAI is amazing."
@@ -34,16 +36,33 @@ a. Input: "babad"
 b. Output: "bab"
 '''
 
+def palindromo(palavra):
+    
+    pass
+
 '''
 4 - Coloque em maiúscula a primeira leitra de cada frase na string:
-a. Input "hello, how are you? i'm fine, thank you."
-b. Output "Hello, How are you? I'm fine, thank you."
+a. Input "hello. how are you? i'm fine, thank you."
+b. Output "Hello. How are you? I'm fine, thank you."
 '''
 
+def maiuscula(frase):
+    frases=[]
+    signal = 0
+    frase_inicial = frase.capitalize().split()
+    for frase in frase_inicial:
+        if signal == 1:
+            frase = frase.capitalize()
+            signal =0
+        elif '.' in frase or '?' in frase:
+            signal = 1
+        frases.append(frase)
+    frases = ' '.join(frases)
+    return(frases)
 '''
 5 - Verifique se a string é um anagrama de um palindromo:
 a. Input: "racecar"
 b. Output: true
 '''
 
-print(remover_duplicados("Hello, World!"))
+print(maiuscula("hello. how are you? i'm fine, thank you."))
