@@ -1,4 +1,3 @@
-import re
 
 '''
 1 - Reverta a ordem das palavras nas frases, mantendo a ordem das palavras.
@@ -37,6 +36,7 @@ b. Output: "bab"
 '''
 
 def palindromo(palavra):
+    palavra.split
     
     pass
 
@@ -65,4 +65,19 @@ a. Input: "racecar"
 b. Output: true
 '''
 
-print(maiuscula("hello. how are you? i'm fine, thank you."))
+def anagrama(palavra):
+    palavra_inicial = list(palavra)
+    print(palavra_inicial)
+    palavra_final = palavra_inicial[::-1]
+    if palavra_inicial == palavra_final:
+        palavra_inicial.sort()
+        palavra_final.sort()
+        if palavra_inicial == palavra_final:
+            return True
+        else:
+            return False
+    else:
+        return False
+
+
+print(anagrama('aacaa'))
