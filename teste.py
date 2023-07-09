@@ -36,9 +36,13 @@ b. Output: "bab"
 '''
 
 def palindromo(palavra):
-    palavra.split
-    
-    pass
+    maior_s = ""
+    for i in range(len(palavra)):
+        for j in range(i+1, len(palavra)+1):
+            substring = palavra[i:j]
+            if substring == substring[::-1] and len(substring) > len(maior_s):
+                maior_s = substring
+    return maior_s
 
 '''
 4 - Coloque em maiúscula a primeira leitra de cada frase na string:
@@ -59,6 +63,7 @@ def maiuscula(frase):
         frases.append(frase)
     frases = ' '.join(frases)
     return(frases)
+
 '''
 5 - Verifique se a string é um anagrama de um palindromo:
 a. Input: "racecar"
@@ -80,4 +85,3 @@ def anagrama(palavra):
         return False
 
 
-print(anagrama('aacaa'))
