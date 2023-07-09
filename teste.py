@@ -1,8 +1,14 @@
 '''
 1 - Reverta a ordem das palavras nas frases, mantendo a ordem das palavras.
-a. Input: "Hello, World! OpenAI is amazing"
+a. Input: "Hello, World! OpenAI is amazing."
 b. Output: "amazing. is OpenAi World! Hello,"
 '''
+
+def reverter_ordem(frase):
+    frase = frase.split(' ')
+    frase.reverse()
+    frase_inversa = ' '.join(frase)   
+    return frase_inversa
 
 '''
 2 - Remova todos os caracteres duplicados da string abaixo:
@@ -27,3 +33,5 @@ b. Output "Hello, How are you? I'm fine, thank you."
 a. Input: "racecar"
 b. Output: true
 '''
+
+print(reverter_ordem("Hello, World! OpenAI is amazing."))
